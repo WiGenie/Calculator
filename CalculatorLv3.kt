@@ -33,7 +33,8 @@ fun main() {
                     continue
                 }
             }
-            num1 = calculate.Calculator(num1, num2)
+            num1 = calculate.result(num1, num2)
+            println("${num1}")
 
         }
         catch(e:java.lang.NumberFormatException){
