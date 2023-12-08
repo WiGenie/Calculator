@@ -7,7 +7,7 @@ fun main() {
         try {
 
             num1 = readLine()!!.toDouble()
-        } catch (e: java.lang.NumberFormatException) {
+        } catch (e: NumberFormatException) {
             println("숫자를 입력해 주셔야 해요.")
         }
     }
@@ -20,7 +20,7 @@ fun main() {
                 println("알맞은 연산자를 입력해주세요")
                 continue
             }
-
+            println("수를 입력하세요.")
             var num2 = readLine()!!.toDouble()
 
             var calculate = when (chec) {
@@ -33,17 +33,20 @@ fun main() {
                     continue
                 }
             }
-            num1 = calculate.result(num1, num2)
+            print("${num1} ${chec} ${num2} = ")
+            num1 = calculate.realcalculate(num1, num2)
             println("${num1}")
 
         }
-        catch(e:java.lang.NumberFormatException){
+        catch(e: NumberFormatException){
             println("정상적인 값을 입력해 주셔야 해요.")
         }
     }
 
 }
 
-class Calculator(num1: Double, num2: Double) {
-
+open class Calculator {
+ open fun realcalculate(num1:Double, num2:Double):Double{
+     return 0.0
+ }
 }
